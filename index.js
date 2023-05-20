@@ -55,21 +55,21 @@
                     categoria: 'llavero'
                 },
                 {
-                    id: 7,
+                    id: 8,
                     nombre: 'Llavero peace',
                     precio: 700,
                     imagen: 'images/Llavero-peace.jpeg',
                     categoria: 'llavero'
                 },
                 {
-                    id: 7,
+                    id: 9,
                     nombre: 'Pulsera amor',
                     precio: 700,
                     imagen: 'images/Pulsera-amor.jpeg',
                     categoria: 'pulsera'
                 },
                 {
-                    id: 7,
+                    id: 10,
                     nombre: 'Pulsera love black-golden',
                     precio: 700,
                     imagen: 'images/Pulsera-love-black-golden.jpeg',
