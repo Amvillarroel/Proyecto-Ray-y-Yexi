@@ -7,52 +7,73 @@
             const baseDeDatos = [
                 {
                     id: 1,
-                    nombre: 'Vincha rojo',
+                    nombre: 'Collar Fairy Moon',
                     precio: 300,
-                    imagen: 'images/logo.jpeg',
-                    categoria: 'vincha'
+                    imagen: 'images/Collar-fairy-moon.jpeg',
+                    categoria: 'collar'
                 },
                 {
                     id: 2,
-                    nombre: 'Vincha arcoiris',
+                    nombre: 'Collar love-lila',
                     precio: 560,
-                    imagen: 'images/logo.jpeg',
-                    categoria: 'vincha'
+                    imagen: 'images/Collar-love-lila.jpeg',
+                    categoria: 'collar'
                 },
                 {
                     id: 3,
-                    nombre: 'Vincha xyz',
+                    nombre: 'Collar pearl',
                     precio: 600,
-                    imagen: 'images/logo.jpeg',
-                    categoria: 'vincha'
+                    imagen: 'images/Collar-pearl.jpeg',
+                    categoria: 'collar'
                 },
                 {
                     id: 4,
-                    nombre: 'Vincha farytales',
+                    nombre: 'Collar teddy',
                     precio: 500,
-                    imagen: 'images/logo.jpeg',
-                    categoria: 'vincha'
+                    imagen: 'images/Collar-teddy.jpeg',
+                    categoria: 'collar'
                 },
                 {
                     id: 5,
-                    nombre: 'Vincha unicornio',
+                    nombre: 'Llavero amor',
                     precio: 300,
-                    imagen: 'images/logo.jpeg',
-                    categoria: 'vincha'
+                    imagen: 'images/Llavero-amor.jpeg',
+                    categoria: 'llavero'
                 },
                 {
                     id: 6,
-                    nombre: 'Vincha mariposa',
+                    nombre: 'Llavero happy',
                     precio: 700,
-                    imagen: 'images/logo.jpeg',
-                    categoria: 'vincha'
+                    imagen: 'images/Llavero-happy.jpeg',
+                    categoria: 'llavero'
                 },
                 {
                     id: 7,
-                    nombre: 'Collar Fairy Moon',
+                    nombre: 'Llavero love',
                     precio: 700,
-                    imagen: 'images/Collar-fairy-moon.jpeg',
-                    categoria: 'collares'
+                    imagen: 'images/Llavero-love.jpeg',
+                    categoria: 'llavero'
+                },
+                {
+                    id: 7,
+                    nombre: 'Llavero peace',
+                    precio: 700,
+                    imagen: 'images/Llavero-peace.jpeg',
+                    categoria: 'llavero'
+                },
+                {
+                    id: 7,
+                    nombre: 'Pulsera amor',
+                    precio: 700,
+                    imagen: 'images/Pulsera-amor.jpeg',
+                    categoria: 'pulsera'
+                },
+                {
+                    id: 7,
+                    nombre: 'Pulsera love black-golden',
+                    precio: 700,
+                    imagen: 'images/Pulsera-love-black-golden.jpeg',
+                    categoria: 'pulsera'
                 }
 
             ];
@@ -227,10 +248,59 @@
         //Funciones para manejar los displays de las categorias de los productos
         function displayProductos(producto) {
             if (producto == 'collares') {
-            let vinchas = document.querySelectorAll(".vincha");
-            for (let i = 0; i < vinchas.length; i++) {
-                vinchas[i].style.display = 'none';
-            }}
+            
+            let collares = document.querySelectorAll(".collar");
+            for (let i = 0; i < collares.length; i++) {
+            collares[i].style.display = 'flex';
+            }
+
+            let llaveros = document.querySelectorAll(".llavero");
+            for (let i = 0; i < llaveros.length; i++) {
+            llaveros[i].style.display = 'none';
+            }
+            
+            let pulseras = document.querySelectorAll(".pulsera");
+            for (let i = 0; i < pulseras.length; i++) {
+            pulseras[i].style.display = 'none';
+            }
+
+            } //fin de display collares
+
+             else if (producto == 'llaveros') {
+                let collares = document.querySelectorAll(".collar");
+                for (let i = 0; i < collares.length; i++) {
+                collares[i].style.display = 'none';
+                }
+    
+                let llaveros = document.querySelectorAll(".llavero");
+                for (let i = 0; i < llaveros.length; i++) {
+                llaveros[i].style.display = 'flex';
+                }
+                
+                let pulseras = document.querySelectorAll(".pulsera");
+                for (let i = 0; i < pulseras.length; i++) {
+                pulseras[i].style.display = 'none';
+                }
+    
+                } //fin display llaveros
+
+                else if (producto == 'pulseras') {
+                    let collares = document.querySelectorAll(".collar");
+                    for (let i = 0; i < collares.length; i++) {
+                    collares[i].style.display = 'none';
+                    }
+        
+                    let llaveros = document.querySelectorAll(".llavero");
+                    for (let i = 0; i < llaveros.length; i++) {
+                    llaveros[i].style.display = 'none';
+                    }
+                    
+                    let pulseras = document.querySelectorAll(".pulsera");
+                    for (let i = 0; i < pulseras.length; i++) {
+                    pulseras[i].style.display = 'flex';
+                    }
+        
+                    } //fin display llaveros
 
 
-        }
+            }//fin de funcion displayProductos
