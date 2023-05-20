@@ -46,6 +46,13 @@
                     precio: 700,
                     imagen: 'images/logo.jpeg',
                     categoria: 'vincha'
+                },
+                {
+                    id: 7,
+                    nombre: 'Collar Fairy Moon',
+                    precio: 700,
+                    imagen: 'images/Collar-fairy-moon.jpeg',
+                    categoria: 'collares'
                 }
 
             ];
@@ -218,7 +225,12 @@
         });
 
         //Funciones para manejar los displays de las categorias de los productos
-        function collares() {
-            let vinchas = document.querySelector(".vincha")
-            vinchas.style.display="none";
+        function displayProductos(producto) {
+            if (producto == 'collares') {
+            let vinchas = document.querySelectorAll(".vincha");
+            for (let i = 0; i < vinchas.length; i++) {
+                vinchas[i].style.display = 'none';
+            }}
+
+
         }
