@@ -7,39 +7,45 @@
             const baseDeDatos = [
                 {
                     id: 1,
-                    nombre: 'Collar rojo',
+                    nombre: 'Vincha rojo',
                     precio: 300,
-                    imagen: 'images/logo.jpeg'
+                    imagen: 'images/logo.jpeg',
+                    categoria: 'vincha'
                 },
                 {
                     id: 2,
                     nombre: 'Vincha arcoiris',
                     precio: 560,
-                    imagen: 'images/logo.jpeg'
+                    imagen: 'images/logo.jpeg',
+                    categoria: 'vincha'
                 },
                 {
                     id: 3,
-                    nombre: 'Pulsera',
+                    nombre: 'Vincha xyz',
                     precio: 600,
-                    imagen: 'images/logo.jpeg'
+                    imagen: 'images/logo.jpeg',
+                    categoria: 'vincha'
                 },
                 {
                     id: 4,
-                    nombre: 'Anillos',
+                    nombre: 'Vincha farytales',
                     precio: 500,
-                    imagen: 'images/logo.jpeg'
+                    imagen: 'images/logo.jpeg',
+                    categoria: 'vincha'
                 },
                 {
                     id: 5,
-                    nombre: 'Llaveros',
+                    nombre: 'Vincha unicornio',
                     precio: 300,
-                    imagen: 'images/logo.jpeg'
+                    imagen: 'images/logo.jpeg',
+                    categoria: 'vincha'
                 },
                 {
                     id: 6,
-                    nombre: 'Zarcillos',
+                    nombre: 'Vincha mariposa',
                     precio: 700,
-                    imagen: 'images/logo.jpeg'
+                    imagen: 'images/logo.jpeg',
+                    categoria: 'vincha'
                 }
 
             ];
@@ -61,7 +67,8 @@
                 baseDeDatos.forEach((info) => {
                     // Estructura
                     const miNodo = document.createElement('div');
-                    miNodo.classList.add('card', 'col-sm-4');
+                    miNodo.classList.add('card', 'col-sm-4', `${info.categoria}`);
+                    
                     // Body
                     const miNodoCardBody = document.createElement('div');
                     miNodoCardBody.classList.add('card-body');
@@ -209,3 +216,9 @@
             renderizarProductos();
             renderizarCarrito();
         });
+
+        //Funciones para manejar los displays de las categorias de los productos
+        function collares() {
+            let vinchas = document.querySelector(".vincha")
+            vinchas.style.display="none";
+        }
