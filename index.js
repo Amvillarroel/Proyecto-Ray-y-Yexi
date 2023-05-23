@@ -1,9 +1,7 @@
 
 //    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
    
-        document.addEventListener('DOMContentLoaded', () => {
-
-            // Variables
+          // Variables
             const baseDeDatos = [
                 {
                     id: 1,
@@ -74,9 +72,7 @@
                     precio: 700,
                     imagen: 'images/Pulsera-love-black-golden.jpeg',
                     categoria: 'pulsera'
-                }
-
-            ];
+                }];
 
             let carrito = [];
             const divisa = '$';
@@ -85,8 +81,6 @@
             const DOMtotal = document.querySelector('#total');
             const DOMbotonVaciar = document.querySelector('#boton-vaciar');
             const miLocalStorage = window.localStorage;
-
-            // Funciones
 
             /**
             * Dibuja todos los productos a partir de la base de datos. No confundir con el carrito
@@ -162,7 +156,7 @@
                     }, 0);
                     // Creamos el nodo del item del carrito
                     const miNodo = document.createElement('li');
-                    miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
+                    miNodo.classList.add('list-group-item', 'text-right', 'mx-2', 'productosEnCarrito');
                     miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
                     // Boton de borrar
                     const miBoton = document.createElement('button');
@@ -243,7 +237,20 @@
             cargarCarritoDeLocalStorage();
             renderizarProductos();
             renderizarCarrito();
+ 
+             //Funcion para el boton enviar pedido
+        let arrayCarrito = [];
+        
+        function carritoParaEnviar () {
+            //llenar el array del carrito para enviarlo con el boton enviar pedido
+            let productosEnCarrito = document.querySelectorAll('.productosEnCarrito');
+            productosEnCarrito.forEach((producto)=>{
+            arrayCarrito.push(producto.innerText)
         });
+            
+        vaciarCarrito();
+        };
+
 
         //Funciones para manejar los displays de las categorias de los productos
         function displayProductos(producto) {
