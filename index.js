@@ -249,7 +249,7 @@
         });
 
         //Aquí debo agregar un alert donde se le indica al cliente que será reedirigido a Whatsapp web para enviar el pedido mediante un mensaje
-
+        //Buscar la manera de que el reedireccionamiento se haga en una pestaña nueva
 
         //api de whatsapp para enviar los productos del carrito
             window.location.href = 'https://api.whatsapp.com/send?phone=541173621680&text=Me%20interesan%20los%20siguientes%20productos' + ' ' + JSON.stringify(arrayCarrito)
