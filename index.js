@@ -247,7 +247,12 @@
             productosEnCarrito.forEach((producto)=>{
             arrayCarrito.push(producto.innerText)
         });
-            
+
+        //Aquí debo agregar un alert donde se le indica al cliente que será reedirigido a Whatsapp web para enviar el pedido mediante un mensaje
+
+
+        //api de whatsapp para enviar los productos del carrito
+            window.location.href = 'https://api.whatsapp.com/send?phone=541173621680&text=Me%20interesan%20los%20siguientes%20productos' + ' ' + JSON.stringify(arrayCarrito)
         vaciarCarrito();
         };
 
