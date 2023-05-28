@@ -56,3 +56,18 @@
     align-items:center;
     justify-content: space-between;
 }
+
+/* cartel de articulo agregado al carrito*/
+
+.cartel {
+    position: fixed;
+    top: 20%;
+    left: 80%;
+    background-color: lightgreen;
+    padding: 10px;
+    border: 1px solid #ddd;
+    display: none;
+    width: 50px;
+    height: 50px;
+    
+}

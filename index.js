@@ -111,7 +111,7 @@
                     miNodoBoton.classList.add('btn-productos');
                     miNodoBoton.textContent = '+';
                     miNodoBoton.setAttribute('marcador', info.id);
-                    miNodoBoton.addEventListener('click', anyadirProductoAlCarrito);
+                    miNodoBoton.addEventListener('click', anyadirProductoAlCarrito);           
                     // Insertamos
                     miNodoCardBody.appendChild(miNodoImagen);
                     miNodoCardBody.appendChild(miNodoTitle);
@@ -128,15 +128,23 @@
             function anyadirProductoAlCarrito(evento) {
                 // Anyadimos el Nodo a nuestro carrito
                 carrito.push(evento.target.getAttribute('marcador'))
+                //mostrar aviso de producto agregado al carrito
+                mostrarCartel();
                 // Actualizamos el carrito 
                 renderizarCarrito();
                 // Actualizamos el LocalStorage
                 guardarCarritoEnLocalStorage();
             }
 
-            /**
-            * Dibuja todos los productos guardados en el carrito
-            */
+            //funcion para mostrar cartel al agregar un producto
+            function mostrarCartel() {
+                const cartel = document.getElementById('cartel');
+                cartel.style.display = 'inline';
+                setTimeout(() => {cartel.style.display = 'none';}, 900)
+            }
+
+
+            /*Dibuja todos los productos guardados en el carrito*/
             function renderizarCarrito() {
                 // Vaciamos todo el html
                 DOMcarrito.textContent = '';
