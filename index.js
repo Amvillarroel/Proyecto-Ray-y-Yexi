@@ -139,7 +139,7 @@
             //funcion para mostrar cartel al agregar un producto
             function mostrarCartel() {
                 const cartel = document.getElementById('cartel');
-                cartel.style.display = 'inline';
+                cartel.style.display = 'flex';
                 setTimeout(() => {cartel.style.display = 'none';}, 900)
             }
 
