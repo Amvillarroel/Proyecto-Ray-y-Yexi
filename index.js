@@ -79,9 +79,8 @@
         const DOMbotonVaciar = document.querySelector('#boton-vaciar');
         const miLocalStorage = window.localStorage;
 
-        /**
-        * Dibuja todos los productos a partir de la base de datos. No confundir con el carrito
-        */
+        //Dibuja todos los productos a partir de la base de datos. No confundir con el carrito
+        
         function renderizarProductos() {
             baseDeDatos.forEach((info) => {
                 // Estructura
@@ -119,9 +118,8 @@
             });
         }
 
-        /**
-        * Evento para añadir un producto al carrito de la compra
-        */
+        //Evento para añadir un producto al carrito de la compra
+        
         function anyadirProductoAlCarrito(evento) {
             // Anyadimos el Nodo a nuestro carrito
             carrito.push(evento.target.getAttribute('marcador'))
@@ -140,8 +138,7 @@
             setTimeout(() => {cartel.style.display = 'none';}, 900)
         }
 
-
-        /*Dibuja todos los productos guardados en el carrito*/
+        //Dibuja todos los productos guardados en el carrito
         function renderizarCarrito() {
             // Vaciamos todo el html
             DOMcarrito.textContent = '';
@@ -178,10 +175,8 @@
             DOMtotal.textContent = calcularTotal();
         }
 
-        /**
-        * Evento para borrar un elemento del carrito
-        */
-        function borrarItemCarrito(evento) {
+            // Evento para borrar un elemento del carrito
+            function borrarItemCarrito(evento) {
             // Obtenemos el producto ID que hay en el boton pulsado
             const id = evento.target.dataset.item;
             // Borramos todos los productos
@@ -195,24 +190,20 @@
 
         }
 
-        /**
-         * Calcula el precio total teniendo en cuenta los productos repetidos
-         */
+        //Calcula el precio total teniendo en cuenta los productos repetidos            
         function calcularTotal() {
             // Recorremos el array del carrito 
             return carrito.reduce((total, item) => {
                 // De cada elemento obtenemos su precio
                 const miItem = baseDeDatos.filter((itemBaseDatos) => {
-                    return itemBaseDatos.id === parseInt(item);
+                return itemBaseDatos.id === parseInt(item);
                 });
                 // Los sumamos al total
                 return (total + miItem[0].precio);
             }, 0).toFixed(2);
         }
 
-        /**
-        * Varia el carrito y vuelve a dibujarlo
-        */
+        //Vaciar el carrito y vuelve a dibujarlo 
         function vaciarCarrito() {
             // Limpiamos los productos guardados
             carrito = [];
@@ -243,26 +234,39 @@
         renderizarProductos();
         renderizarCarrito();
 
-         //Funcion para el boton enviar pedido
+    //Funcion para el boton enviar pedido
     let arrayCarrito = [];
-    
-    function carritoParaEnviar () {
+    let carritoParaEnviar = document.querySelector('#carritoParaEnviar');
+
+        carritoParaEnviar.addEventListener('click', function carritoParaEnviar () {
         //llenar el array del carrito para enviarlo con el boton enviar pedido
         let productosEnCarrito = document.querySelectorAll('.productosEnCarrito');
         productosEnCarrito.forEach((producto)=>{
         arrayCarrito.push(producto.innerText)
+        })
+
+        //api de whatsapp para enviar los productos del carrito
+        urlApiWahtsapp = 'https://api.whatsapp.com/send?phone=541173621680&text=Me%20interesan%20los%20siguientes%20productos' + ' ' + JSON.stringify(arrayCarrito);
+        window.open(urlApiWahtsapp, "_blank");
+        vaciarCarrito();
     });
 
-    //Aquí debo agregar un alert donde se le indica al cliente que será reedirigido a Whatsapp web para enviar el pedido mediante un mensaje
+    // función para el boton ver carrito
+    let btnCarrito = document.querySelector('.btnCarrito');
     
+    btnCarrito.addEventListener('click', function verCarrito() {
+        let mostrarCarrito = document.querySelector('.carrito');
+        mostrarCarrito.style.display = 'flex';
+    });
 
-    //api de whatsapp para enviar los productos del carrito
-    urlApiWahtsapp = 'https://api.whatsapp.com/send?phone=541173621680&text=Me%20interesan%20los%20siguientes%20productos' + ' ' + JSON.stringify(arrayCarrito);
-    window.open(urlApiWahtsapp, "_blank");
+    //funcion para ocultar el carrito y seguir comprando
+    let btnOcultarCarrito = document.querySelector('#btnSeguirComprando');
     
+    btnOcultarCarrito.addEventListener('click', function ocultarCarrito() {
+        let ocultarCarrito = document.querySelector('.carrito');
+        ocultarCarrito.style.display = 'none';
+    })
 
-    vaciarCarrito();
-    };
 
     //Funciones para manejar los displays de las categorias de los productos    
     let collares = document.querySelectorAll(".collar");
