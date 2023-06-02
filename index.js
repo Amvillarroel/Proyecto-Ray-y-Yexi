@@ -122,7 +122,7 @@
         
         function anyadirProductoAlCarrito(evento) {
             // Anyadimos el Nodo a nuestro carrito
-            carrito.push(evento.target.getAttribute('marcador'))
+            carrito.push(evento.target.getAttribute('marcador'));
             //mostrar aviso de producto agregado al carrito
             mostrarCartel();
             // Actualizamos el carrito 
@@ -157,8 +157,8 @@
                     return itemId === item ? total += 1 : total;
                 }, 0);
                 // Creamos el nodo del item del carrito
-                const miNodo = document.createElement('li');
-                miNodo.classList.add('list-group-item', 'text-right', 'mx-2', 'productosEnCarrito');
+                const miNodo = document.createElement('p');
+                miNodo.classList.add('text-center', 'mx-2', 'productosEnCarrito');
                 miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
                 // Boton de borrar
                 const miBoton = document.createElement('button');
@@ -328,7 +328,7 @@
                 pulseras[i].style.display = 'flex';
                 }
     
-                } //fin display llaveros
+                } //fin display pulseras
 
 
         }//fin de funcion displayProductos
