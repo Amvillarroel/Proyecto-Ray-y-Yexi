@@ -132,5 +132,8 @@
         height: auto;
         width: 70%;
     }
+    .btnCarrito {
+        display: block !important;
+    }
 }
 

@@ -252,12 +252,13 @@
     });
 
     // función para el boton ver carrito
-    let btnCarrito = document.querySelector('.btnCarrito');
-    
-    btnCarrito.addEventListener('click', function verCarrito() {
+    function verCarrito() {
         let mostrarCarrito = document.querySelector('.carrito');
         mostrarCarrito.style.display = 'flex';
-    });
+    }
+
+    /*let btnCarrito = document.querySelector('.btnCarrito');
+    btnCarrito.addEventListener('click', verCarrito());*/
 
     //funcion para ocultar el carrito y seguir comprando
     let btnOcultarCarrito = document.querySelector('#btnSeguirComprando');
@@ -332,3 +333,13 @@
 
 
         }//fin de funcion displayProductos
+
+        //funcion para el boton hamburguesa
+        let navBarSecundaria = document.querySelector('.navbar-sencundaria');
+        
+        function flexDirectionSecundaria() {
+        navBarSecundaria.classList.toggle('flex-row');
+        navBarSecundaria.classList.toggle('mx-auto'); 
+
+        }
+
