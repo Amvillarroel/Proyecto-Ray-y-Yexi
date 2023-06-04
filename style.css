@@ -83,14 +83,15 @@
 .carrito {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 10%;
     width: 50%;
-    height: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: 9999;
     color: white;
     font-weight: bold;
     border-radius: 25px;
+    text-align: center;
 }
 
 #mostrarCarrito {
@@ -103,3 +104,33 @@
     border: rgba(0, 0, 0, 0.200) solid 2px;
     background-color: #6e9277;
 }
+
+/*.productosEnCarrito {
+    margin-left: 10%;
+}*/
+
+@media screen and (max-width: 740px){
+    #boton-vaciar {
+        display: block;
+        width: 80%;
+        margin: auto;
+        margin-bottom: 4px;
+    }
+    #carritoParaEnviar {
+        display: block;
+        width: 80%;
+        margin: auto;
+        margin-bottom: 4px;
+    }
+    #btnSeguirComprando {
+        display: block;
+        width: 80%;
+        margin: auto;
+        margin-bottom: 6px;
+    }
+    #mostrarCarrito {
+        height: auto;
+        width: 70%;
+    }
+}
+
