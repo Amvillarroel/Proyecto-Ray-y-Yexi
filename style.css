@@ -137,3 +137,13 @@
     }
 }
 
+.footer {
+    display: flex;
+    flex-direction: row; 
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding: 50px;
+    gap: 10px;
+    background-color: #6e9277;
+}

@@ -129,6 +129,9 @@
             renderizarCarrito();
             // Actualizamos el LocalStorage
             guardarCarritoEnLocalStorage();
+            // Cambiar el icono del carrito vacio por el carrito lleno
+            let iconoCarrito = document.querySelector('.icono-carrito');
+            iconoCarrito.classList.replace('bi-cart', 'bi-cart-check-fill');     
         }
 
         //funcion para mostrar cartel al agregar un producto
@@ -187,7 +190,11 @@
             renderizarCarrito();
             // Actualizamos el LocalStorage
             guardarCarritoEnLocalStorage();
-
+            //Cambiar el carrito full por el carrito vacio si se eliminan todos los articulos
+            if (calcularTotal() == 0) {
+            let iconoCarrito = document.querySelector('.icono-carrito');
+            iconoCarrito.classList.replace('bi-cart-check-fill', 'bi-cart');
+            }
         }
 
         //Calcula el precio total teniendo en cuenta los productos repetidos            
@@ -211,6 +218,9 @@
             renderizarCarrito();
             // Borra LocalStorage
             localStorage.clear();
+            //cambiar icono de carrito full por carrito vacio
+            let iconoCarrito = document.querySelector('.icono-carrito');
+            iconoCarrito.classList.replace('bi-cart-check-fill', 'bi-cart');
 
         }
 
@@ -243,7 +253,7 @@
         let productosEnCarrito = document.querySelectorAll('.productosEnCarrito');
         productosEnCarrito.forEach((producto)=>{
         arrayCarrito.push(producto.innerText)
-        })
+        });
 
         //api de whatsapp para enviar los productos del carrito
         urlApiWahtsapp = 'https://api.whatsapp.com/send?phone=541173621680&text=Me%20interesan%20los%20siguientes%20productos' + ' ' + JSON.stringify(arrayCarrito);
